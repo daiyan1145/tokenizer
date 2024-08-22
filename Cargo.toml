@@ -1,0 +1,13 @@
+[package]
+name = "tokenizer"
+version = "0.1.0"
+edition = "2021"
+readme = "README.md"
+
+[dependencies]
+derive_more = { version = "1.0.0", features = ["full"] }
+regex = "1.10.6"
+serde = "1.0.208"
+serde_derive = "1.0.208"
+serde_json = "1.0.125"
+unicode-segmentation = "1.11.0"
