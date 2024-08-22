@@ -77,6 +77,8 @@ impl Tokenizer {
         let mut current_str = self.str_iter.clone();
         let mut current_index = 0;
         loop {
+            dbg!(&current_str);
+            let mut matched = false;
             for reg in &self.matchers {
                 if let Some(s) = reg.get(&current_str) {
                     current_str = current_str[s.len()..].to_owned();
@@ -87,10 +89,14 @@ impl Tokenizer {
                         line,
                         column,
                     });
+                    matched = true;
                     break;
                 } else {
                     continue;
                 }
+            }
+            if !matched {
+                return Err(TokenizerError::AllRegexesMatchNothing);
             }
             if current_str.len() == 0 {
                 break;
@@ -147,14 +153,14 @@ mod tests {
     #[allow(unused_must_use)]
     fn t1() {
         let src = "
-class A {
+class Test {
 }";
         let tokens = filter_white_spaces(
             to_tokens(
                 vec![
                     "class".into(),
                     WHITE_SPACE_REGEX.clone().into(),
-                    Regex::new(r"\A.+?").unwrap().into(),
+                    Regex::new(r"\A[.[^\{\s]]+").unwrap().into(),
                     "{".into(),
                     "}".into(),
                 ],
