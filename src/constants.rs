@@ -2,6 +2,7 @@ use std::cell::LazyCell;
 
 use regex::Regex;
 
+#[allow(unused)]
 pub(crate) const WHITE_SPACE: LazyCell<Vec<&'static str>> = LazyCell::new(|| {
     vec!["\n", "\r", "\t", " "]
 });

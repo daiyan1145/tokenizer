@@ -1,3 +1,4 @@
+#[allow(unused)]
 pub(crate) const NEW_LINE: &'static str =
 if cfg!(target_os = "windows") {
     "\r\n"

@@ -1,4 +1,5 @@
 #![cfg(any(target_os = "windows", target_os = "linux"))]
+#![allow(internal_features)]
 #![feature(fmt_internals)]
 
 mod column_line;
