@@ -18,9 +18,9 @@ type Res<T> = Result<T, TokenizerError>;
 
 #[derive(Clone)]
 pub struct Token {
-    val: String,
-    line: usize,
-    column: usize,
+    pub val: String,
+    pub line: usize,
+    pub column: usize,
 }
 
 impl ::std::fmt::Debug for Token {
