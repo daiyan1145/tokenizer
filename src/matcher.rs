@@ -1,4 +1,4 @@
-use std::{any::Any, fmt::{Debug, Display, Formatter}};
+use std::{any::Any, cell::LazyCell, fmt::{Debug, Display, Formatter}};
 
 use regex::Regex;
 
@@ -106,6 +106,18 @@ impl MatcherTrait for Regex {
     }
     fn _to_string(&self) -> String {
         self.to_string()
+    }
+}
+
+impl MatcherTrait for LazyCell<Regex> {
+    fn get(&self, src: &String) -> Option<String> {
+        (**self).get(src)
+    }
+    fn get_at(&self, src: &String, index: usize) -> Option<String> {
+        (**self).get_at(src, index)
+    }
+    fn _to_string(&self) -> String {
+        (**self)._to_string()
     }
 }
 

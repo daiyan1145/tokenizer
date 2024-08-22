@@ -60,6 +60,10 @@ impl Tokenizer {
         self.matchers.push(src.into());
     }
 
+    pub fn add_ws_pat(&mut self) {
+        self.matchers.push(WHITE_SPACE_REGEX.into());
+    }
+
     pub(crate) fn add_common_pat(&mut self, src: Matcher) {
         self.matchers.push(src);
     }
