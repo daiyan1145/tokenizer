@@ -3,6 +3,11 @@ name = "tokenizer"
 version = "0.1.0"
 edition = "2021"
 readme = "README.md"
+license = "MIT"
+description = "A tokenizer"
+homepage = "https://docs.rs/tokenizer"
+documentation = "https://docs.rs/tokenizer"
+repository = "https://github.com/daiyan1145/tokenizer"
 
 [dependencies]
 anyhow = { version = "1.0.86", features = ["backtrace", "std"] }
