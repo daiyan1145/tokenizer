@@ -1,12 +1,12 @@
 [package]
-name = "tokenizer"
-version = "0.1.0"
+name = "great-tokenizer"
+version = "0.2.0"
 edition = "2021"
 readme = "README.md"
 license = "MIT"
 description = "A tokenizer"
-homepage = "https://docs.rs/tokenizer"
-documentation = "https://docs.rs/tokenizer"
+homepage = "https://docs.rs/great-tokenizer/latest/great_tokenizer/"
+documentation = "https://docs.rs/great-tokenizer/latest/great_tokenizer/"
 repository = "https://github.com/daiyan1145/tokenizer"
 
 [dependencies]
